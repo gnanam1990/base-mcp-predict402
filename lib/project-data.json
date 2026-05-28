@@ -1,0 +1,58 @@
+{
+  "repo": "base-mcp-predict402",
+  "name": "Predict402",
+  "shortName": "P4",
+  "api": "predict402",
+  "category": "Prediction Markets",
+  "tagline": "Prediction markets with x402-paid research and MCP execution.",
+  "status": "Market MVP foundation",
+  "mission": "Combine market creation, betting, and paid research so agents can discover, analyze, and act on prediction opportunities.",
+  "primaryAction": "Create market",
+  "secondaryAction": "Buy research",
+  "metrics": [
+    {
+      "label": "Markets",
+      "value": "6",
+      "tone": "blue"
+    },
+    {
+      "label": "Volume",
+      "value": "$1.2k",
+      "tone": "green"
+    },
+    {
+      "label": "Reports",
+      "value": "28",
+      "tone": "amber"
+    }
+  ],
+  "workflow": [
+    "Creator opens a binary market with terms and resolution source.",
+    "Researchers attach x402-gated analysis.",
+    "Agent pays for research and summarizes the thesis.",
+    "User approves a position through Base Account."
+  ],
+  "tools": [
+    "find_markets",
+    "prepare_market_creation",
+    "buy_research_report",
+    "prepare_bet"
+  ],
+  "records": [
+    [
+      "ETH above target",
+      "58% yes",
+      "4 reports"
+    ],
+    [
+      "Base TVL milestone",
+      "71% yes",
+      "$430 volume"
+    ],
+    [
+      "x402 adoption",
+      "46% yes",
+      "12 agents"
+    ]
+  ]
+}
