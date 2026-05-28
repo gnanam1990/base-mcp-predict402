@@ -1,30 +1,34 @@
 # Predict402
 
-AI-powered prediction markets with x402 research.
+Prediction markets with x402-paid research and MCP execution.
 
-**Status:** Planned seventh build after payment and identity foundations.
+**Status:** Market MVP foundation
 
-Predict402 combines binary prediction markets with x402-gated research feeds and MCP tools for market creation, analysis, and betting.
+Combine market creation, betting, and paid research so agents can discover, analyze, and act on prediction opportunities.
 
-## Why It Exists
-Base MCP gives AI assistants access to Base Account actions such as balances, sends, swaps, contract calls, and x402 payments, with user approval for writes. This project turns that capability into a focused product for prediction market users, AI agents, researchers, and traders on Base.
+## Current MVP
+- Base industrial-neon UI theme from the shared suite prompt.
+- Responsive dashboard with wallet/action controls, metrics, workflow, MCP tools, and live record surface.
+- Product status API at `/api/predict402/status`.
+- Smoke checks for required dashboard data.
 
-## Core Capabilities
-- Binary market factory with market creation, betting, and resolution flows.
-- Market explorer with odds, volume, end time, and settlement state.
-- x402-gated research reports attached to markets.
-- MCP tools for finding markets, creating markets, buying positions, and reading paid research.
-- Leaderboard and activity feed for agents and human users.
+## Local Development
+```bash
+npm install
+npm run dev
+```
 
-## Roadmap Snapshot
-1. Implement Sepolia-only market factory and test suite first.
-2. Build explorer and market detail UI.
-3. Add research publishing and x402 paid unlocks.
-4. Expose MCP prepare endpoints for create/bet/resolve actions.
-5. Launch public demo markets, docs, and mainnet after contract review.
+Open `http://127.0.0.1:3000`.
 
-## Repository Status
-This repository is public from day one. It starts with product, architecture, roadmap, and demo documentation. Implementation commits should stay small and use conventional commit prefixes.
+## Checks
+```bash
+npm run typecheck
+npm run build
+npm run test:smoke
+```
+
+## Next Build Slice
+Wire the mocked dashboard data into real Base Sepolia reads, x402 payment verification, or contract prepare endpoints depending on this product's launch path.
 
 ## License
 MIT
