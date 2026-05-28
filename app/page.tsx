@@ -1,11 +1,14 @@
-import { Activity, ArrowUpRight, Bot, CheckCircle2, CircleDollarSign, Database, Gauge, Network, ShieldCheck, WalletCards } from "lucide-react";
-import projectData from "@/lib/project-data.json";
+import { Activity, Bot, CheckCircle2, CircleDollarSign, Database, Gauge, Network, ShieldCheck, WalletCards } from "lucide-react";
 import type { ProjectData } from "@/lib/types";
+import { dashboardData } from "@/lib/mvp-store";
 
-const project = projectData as ProjectData;
 const icons = [Database, Activity, CircleDollarSign];
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
+  const project = dashboardData() as ProjectData;
+
   return (
     <main className="shell">
       <header className="topbar">
@@ -54,7 +57,7 @@ export default function Home() {
         </aside>
 
         <section className="main">
-          <article className="hero-console">
+          <article className="hero-console" id="launch">
             <div className="hero-copy">
               <p className="eyebrow">Today build</p>
               <h2>{project.tagline}</h2>
