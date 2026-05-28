@@ -10,6 +10,7 @@ node_modules/
 
 # Builds
 .next/
+*.tsbuildinfo
 out/
 dist/
 build/
@@ -33,7 +34,7 @@ venv/
 cache/
 out/
 broadcast/
-lib/
+contracts/lib/
 
 # OS / editors
 .DS_Store

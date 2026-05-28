@@ -1,0 +1,28 @@
+{
+  "name": "base-mcp-predict402",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Base MCP themed MVP foundation.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:smoke": "node scripts/smoke-test.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
