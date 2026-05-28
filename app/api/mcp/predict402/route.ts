@@ -46,7 +46,7 @@ export async function POST(request: Request) {
           slug: item.slug,
           priceUsdc: item.priceUsdc,
           resource: `/api/predict402/markets/${item.slug}/run`,
-          network: process.env.PREDICT402_X402_NETWORK || "eip155:84532",
+          network: process.env.PREDICT402_X402_NETWORK || "eip155:8453",
         },
       });
     }

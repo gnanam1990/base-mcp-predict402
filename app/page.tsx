@@ -52,7 +52,7 @@ export default function Home() {
           </div>
           <div className="status">
             <CheckCircle2 size={18} />
-            Themed MVP ready for Base Sepolia wiring
+            Themed MVP ready for Base mainnet wiring
           </div>
         </aside>
 

@@ -4,12 +4,12 @@ import type { MvpItem } from "./mvp-store";
 export function paymentRequirement(item: MvpItem, resourceUrl: string) {
   return {
     scheme: "exact" as const,
-    network: process.env.PREDICT402_X402_NETWORK || "eip155:84532",
+    network: process.env.PREDICT402_X402_NETWORK || "eip155:8453",
     asset: "USDC" as const,
     amount: item.priceUsdc.toFixed(3),
     payTo: process.env.X402_RECEIVING_ADDRESS || "0x1111111111111111111111111111111111111111",
     resource: resourceUrl,
-    description: `Unlock Predict402 research report for ${item.priceUsdc.toFixed(3)} USDC on Base Sepolia.`,
+    description: `Unlock Predict402 research report for ${item.priceUsdc.toFixed(3)} USDC on Base mainnet.`,
   };
 }
 
