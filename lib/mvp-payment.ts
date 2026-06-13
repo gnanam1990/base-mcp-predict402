@@ -94,10 +94,26 @@ async function callFacilitator(url: string, body: unknown) {
     });
     const text = await response.text();
     const json = text ? (JSON.parse(text) as Record<string, unknown>) : {};
-    const ok = response.ok && json.valid !== false && json.success !== false && !json.error;
+    // x402 facilitators report success via `isValid` (verify) and `success` (settle).
+    // Treat the payment as accepted only when the relevant field is explicitly true,
+    // and never when an explicit failure flag/reason is present.
+    const verifyOk = json.isValid === true || json.valid === true;
+    const settleOk = json.success === true;
+    const explicitFailure =
+      json.isValid === false ||
+      json.valid === false ||
+      json.success === false ||
+      Boolean(json.error) ||
+      Boolean(json.invalidReason);
+    const ok = response.ok && (verifyOk || settleOk) && !explicitFailure;
     return ok
       ? { ok: true as const, body: json }
-      : { ok: false as const, reason: String(json.error || json.reason || response.statusText) };
+      : {
+          ok: false as const,
+          reason: String(
+            json.error || json.invalidReason || json.reason || response.statusText || "facilitator_rejected",
+          ),
+        };
   } catch (error) {
     return { ok: false as const, reason: error instanceof Error ? error.message : "facilitator_failed" };
   }
